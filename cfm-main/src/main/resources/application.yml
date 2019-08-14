@@ -1,0 +1,83 @@
+project:
+  artifactId: cfm
+  name: cfm
+  description: cfm
+server:
+  port: ${tomcat.port:${SERVER_PORT:${PORT:8085}}}
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  cache:
+      guava:
+        spec: maximumSize=2000,expireAfterAccess=300s
+  thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      enabled: true
+  datasource:
+      url: jdbc:mysql://${db.host}:${db.port}/${db.database}?characterEncoding=utf-8&amp;autoReconnect=true&amp;useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true
+      username: ${db.username}
+      password: ${db.password}
+      driver-class-name: com.mysql.jdbc.Driver
+      maxActive: 20
+      initialSize: 10
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      testOnBorrow: true
+      testOnReturn: false
+      validationQuery: SELECT 1
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+  jpa:
+      database: MYSQL
+      open_in_view: false
+      show_sql: true
+      hibernate:
+        ddl_auto: none
+        naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+      properties:
+        hibernate.format_sql: true
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+multipart:
+  enabled: true
+  maxFileSize: 2Mb
+  maxRequestSize: 10Mb
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.remoting: ERROR
+    com.msxf.scm: DEBUG
+
+---
+spring:
+  profiles: local,online
+logging:
+  level:
+    org.springframework.boot: INFO
+    org.springframework.web: INFO
+    org.springframework.remoting.support: DEBUG
+
+---
+spring:
+  profiles: local
+config:
+  file: classpath:config.properties
+logging:
+  path: logs
+
+---
+spring:
+  profiles: online
+config:
+  file: file:/home/Config/cfm/config.properties
+logging:
+  path: /home/Logs/cfm

@@ -1,0 +1,7 @@
+apply plugin: 'java'
+
+dependencies {
+    compile project(':cfm-common')
+    compile "org.freemarker:freemarker:2.3.25-incubating"
+}
+

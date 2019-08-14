@@ -1,0 +1,6 @@
+apply plugin: 'java'
+
+dependencies {
+    compile project(':cfm-domain')
+    compile project(':cfm-common')
+}

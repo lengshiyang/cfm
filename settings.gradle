@@ -1,0 +1,11 @@
+rootProject.name = 'cfm'
+
+include 'cfm-main'
+include 'cfm-service'
+include 'cfm-domain'
+include 'cfm-common'
+
+rootProject.children.each { childProject ->
+    childProject.name = childProject.name
+}
+

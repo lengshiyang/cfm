@@ -1,0 +1,30 @@
+apply plugin: 'war'
+bootRepackage.enabled = true
+
+def buildTime = new Date().format("yyyyMMddHHmm")
+def buildDate = new Date().format("yyyyMMdd")
+
+war {
+    baseName = "cfm"
+    extension = "zip"
+    version = ""
+}
+
+bootRepackage {
+    mainClass = 'com.taichi.cfm.CmfMain'
+}
+
+configurations {
+    ftpAntTask
+}
+
+dependencies {
+    compile project(':cfm-service')
+    ftpAntTask("org.apache.ant:ant-commons-net:1.8.4") {
+        module("commons-net:commons-net:1.4.1") {
+            dependencies "oro:oro:2.0.8:jar"
+        }
+    }
+}
+
+
