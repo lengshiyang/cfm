@@ -112,8 +112,8 @@ class BasicLayout extends React.Component {
       fixedHeader,
     } = this.props;
 
-    // const isTop = PropsLayout === 'topmenu';
-    const isTop = true;
+    const isTop = PropsLayout === 'topmenu';
+    // const isTop = true;
     const contentStyle = !fixedHeader ? { paddingTop: 0 } : {};
     const layout = (
       <Layout>
