@@ -55,7 +55,7 @@ logging:
   level:
     ROOT: INFO
     org.springframework.remoting: ERROR
-    com.msxf.scm: DEBUG
+    com.cfm: DEBUG
 
 ---
 spring:

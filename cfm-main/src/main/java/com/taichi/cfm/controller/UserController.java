@@ -1,7 +1,4 @@
-/**
- * msxf.com Inc.
- * Copyright (c) 2017-2026 All Rights Reserved.
- */
+
 package com.taichi.cfm.controller;
 
 import com.taichi.cfm.dto.*;
@@ -48,7 +45,7 @@ public class UserController {
         user.setName("Serati Ma");
         user.setAvatar("https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png");
         user.setUserid("00000001");
-        user.setEmail("shiyang.leng@msxf.com");
+        user.setEmail("shiyang.leng");
         user.setSignature("海纳百川，有容乃大");
         user.setTitle("交互专家");
         user.setGroup("蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED");

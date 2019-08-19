@@ -44,6 +44,6 @@
     <appender-ref ref="FILE_ERR" />
   </root>
 
-  <logger name="com.msxf.apm"  level="DEBUG" />
+  <logger name="com.cfm"  level="DEBUG" />
 
 </configuration>

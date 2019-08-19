@@ -1,9 +1,9 @@
-package com.msxf.scm.domain.model;
+package com.cfm.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import com.msxf.oss.domain.data.BaseEntity;
+import com.cfm.domain.data.BaseEntity;
 
 /**
 * ${comment!""}
